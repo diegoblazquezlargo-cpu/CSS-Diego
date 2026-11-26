@@ -1,0 +1,207 @@
+/* Paso 1: Base de caja y límites de ancho */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #2d2338;
+  background-color: #fcfbfe;
+  line-height: 1.6;
+}
+
+section,
+.contenedor-flex,
+footer {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Paso 2 y 8: Cabecera con Flexbox y fija (sticky) */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #f0ebf8;
+}
+
+.contenedor-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 1.1rem;
+}
+
+.cabecera h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #6d28d9;
+}
+
+/* Paso 3: Menú con Flexbox */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #5b4d75;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #f3e8ff;
+  color: #6d28d9;
+}
+
+/* Paso 4: Portada centrada */
+.portada {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  gap: 1.2rem;
+  padding-block: 3.5rem;
+  border-bottom: 2px solid #f0ebf8;
+}
+
+.portada h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 900;
+  color: #4c1d95;
+}
+
+.portada p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background-color: #7c3aed;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3);
+  transition: transform 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+/* Paso 5 y 6: Cartas con Flexbox y alturas iguales */
+.carta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  padding-block: 3.5rem;
+}
+
+.plato {
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #f3e8ff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.3s ease;
+}
+
+.plato:hover {
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1);
+}
+
+.plato h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3b0764;
+  margin-bottom: 0.5rem;
+}
+
+.plato p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.precio {
+  margin-top: auto;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #7c3aed;
+}
+
+/* Paso 7: Etiqueta «Novedad» */
+.plato.novedad {
+  position: relative;
+  border-color: #c4b5fd;
+  background: linear-gradient(to bottom, #ffffff, #fbfaff);
+}
+
+.etiqueta {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: #ede9fe;
+  color: #6d28d9;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Paso 8: Pie de página */
+.pie {
+  border-top: 2px solid #f0ebf8;
+  padding-block: 2.5rem;
+  text-align: center;
+  background-color: #fbfaff;
+}
+
+.enlaces-pie {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.enlaces-pie a {
+  text-decoration: none;
+  color: #5b4d75;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.enlaces-pie a:hover {
+  color: #7c3aed;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
